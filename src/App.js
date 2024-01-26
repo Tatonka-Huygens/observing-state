@@ -1,25 +1,21 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import Heading from './Heading';
 import './App.css';
 
 function App() {
+  const [word, setWord] = useState('Eat')
+
+  function handleClick() {
+    setWord('Drink')
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Heading message={word + " at Little Lemon"}/>
+      <button onClick={handleClick}>Click here!</button>
     </div>
   );
+
 }
 
 export default App;
